@@ -1,0 +1,32 @@
+{
+  "name": "esep-observability",
+  "version": "1.0.0",
+  "description": "implementation/solution of esep a9 observability",
+  "homepage": "https://github.com/zwright03/esep-observability#readme",
+  "bugs": {
+    "url": "https://github.com/zwright03/esep-observability/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwright03/esep-observability.git"
+  },
+  "license": "none",
+  "author": "zachary wright",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.58.0",
+    "@opentelemetry/exporter-jaeger": "^2.0.0",
+    "@opentelemetry/instrumentation-http": "^0.200.0",
+    "@opentelemetry/instrumentation-mongodb": "^0.53.0",
+    "@opentelemetry/sdk-node": "^0.200.0",
+    "@opentelemetry/sdk-trace-node": "^2.0.0",
+    "express": "^5.1.0",
+    "mongodb": "^4.3.1",
+    "opentelemetry-instrumentation-express": "^0.41.0"
+  }
+}
