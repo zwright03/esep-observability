@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "quit(db.runCommand({ ping: 1 }).ok === 1 ? 0 : 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+  jaeger:
+    image: jaegertracing/jaeger:2.5.0
+    ports:
+      - "16686:16686"
+      - "4317:4317"
+      - "4318:4318"
+      - "5778:5778"
+      - "9411:9411"
+    healthcheck:
+      # Runs inside Jaeger, so port 13133 does not need a port mapping.
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:13133/status"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
